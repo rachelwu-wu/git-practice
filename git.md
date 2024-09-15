@@ -3,23 +3,23 @@
 ## **What are  blob, tree, commit, branch, head respectively?**
 1. **Blob**: 
 ```
-每當git add檔案的時候，就會產生一個blob object。這個物件會 *紀錄檔案的內容*，但不會紀錄檔名。
+每當git add檔案的時候，就會產生一個blob object。這個物件會紀錄檔案的內容，但不會紀錄檔名。
 ```
 2. **Tree**: 
 ```
-因為blob object不會紀錄檔名，藉由tree object可以儲存資料的結構以及檔名，大概就像是Git的目錄，會根據	<font color=#FF0000>git add</font>加在index的內容建立。 
+因為blob object不會紀錄檔名，藉由tree object可以儲存資料的結構以及檔名，大概就像是Git的目錄，會根據 git add 加在index的內容建立。 
 ```
 3. **Commit**:
 ```
-commit 代表一次完整的提交，感覺上像是截圖目前狀態，`git commit` 是把你在staging area的檔案提交到repository，使得檔案能夠永久保存，完成一個*存檔*的動作，也可以說是建立了一 *版本*。
+commit 代表一次完整的提交，感覺上像是截圖目前狀態，git commit 是把你在staging area的檔案提交到repository，使得檔案能夠永久保存，完成一個存檔的動作，也可以說是建立了一版本。
 ```
 4. **Branch**:
 ```
-branch是開發中的某個分支，在使用`git init`預設的分支名稱原為main，為了維持master的穩定版本狀態，可以使用branch開發不同功能並且互不影響。
+branch是開發中的某個分支，在使用 git init 預設的分支名稱原為main，為了維持master的穩定版本狀態，可以使用branch開發不同功能並且互不影響。
 ```
 5. **Head**:
 ```
-head會在Git中指出目前所在的branch，形同 **游標** 並間接指向當前 branch 的最新 commit。    
+head會在Git中指出目前所在的branch，形同游標並間接指向當前 branch 的最新 commit。    
 ```
 
 ## **What happened in the `.git` folder during the operations in a Git repository?**
