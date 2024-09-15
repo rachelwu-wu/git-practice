@@ -7,7 +7,7 @@
 ```
 2. **Tree**: 
 ```
-因為blob object不會紀錄檔名，藉由tree object可以儲存資料的結構以及檔名，大概就像是Git的目錄，會根據`git add`加在index的內容建立。 
+因為blob object不會紀錄檔名，藉由tree object可以儲存資料的結構以及檔名，大概就像是Git的目錄，會根據	<font color=#FF0000>git add</font>加在index的內容建立。 
 ```
 3. **Commit**:
 ```
@@ -44,7 +44,7 @@ repo下所有的檔案、目錄與子目錄下的所有檔案，全部都會被�
 ```
 檢視現在工作目錄的狀態
 ```
-## **How to write better git commit messages? **
+**How to write better git commit messages?**
 >一個好的 Git Commit Message 必須兼具 What & Why & How，能幫助開發者瞭解這個提交版本：
 >
 >>1. 做了什麼事情（What）
