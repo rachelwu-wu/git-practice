@@ -34,7 +34,8 @@
 - **目的**：讓開發者可以藉由`npm install` 輕鬆安裝並管理函式庫，簡化了管理的時間。
 - 只要提供package.json，開發者就可以下載後執行`npm install`安裝所需的套件了！
 ```
-package.json：執行 `npm init`後產生的檔案，就像是一個控制面板，裡面大致記錄著以下：
+package.json：
+執行 `npm init`後產生的檔案，就像是一個控制面板，裡面大致記錄著以下：
 專案名稱(name)、
 專案所使用的套件種類＆簡介（dependencies&description)、套件概述（keywords)、
 版本(version)、
