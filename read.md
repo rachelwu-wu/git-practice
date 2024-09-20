@@ -26,3 +26,25 @@
 >從各個參考文件可以發現Node.js 的安裝過程相對簡單，在網路上也因其市場成熟度足夠，有許多教學及範例可以供參，可以很快在API、網頁應用等派上用場，學習曲線相較於其他較新穎的環境平台漸進且快速。
 >
 
+## nvm 與 npm 分別是什麼？
+>以Node.js 當一個實作JavaScript的平台環境時，其系統包括 npm （Node.js 包管理器）和 nvm （Node.js 版本管理器）等重要工具。
+>
+
+### npm((Node Package Manager))
+- *目的*：讓開發者可以藉由`npm install` 輕鬆安裝並管理函式庫，簡化了管理的時間。
+- package.json：執行 `npm init`後產生的檔案，裡面記錄著專案名稱(name)、使用的套件種類（dependencies&description)、套件概述（keywords)、版本(version)、腳本(script)
+-只要提供package.json，開發者就可以下載後執行`npm install`安裝所需的套件了！
+
+### npm(Node Version Manager)
+- *目的*：隨著時間推進，Node.js的版本也會變舊，想要切換到不同版本的Node.js，就需要經過NVM切換版本。
+
+``` 
+#列出已經安裝的所有版本
+nvm ls
+#安裝特定版本
+nvm install v20.17.0
+#切換成特定版本
+nvm install v20.17.0
+#設定預先版本
+nvm alias default v20.17.0
+```
