@@ -31,20 +31,25 @@
 >
 
 ### npm((Node Package Manager))
-- *目的*：讓開發者可以藉由`npm install` 輕鬆安裝並管理函式庫，簡化了管理的時間。
-- package.json：執行 `npm init`後產生的檔案，裡面記錄著專案名稱(name)、使用的套件種類（dependencies&description)、套件概述（keywords)、版本(version)、腳本(script)
--只要提供package.json，開發者就可以下載後執行`npm install`安裝所需的套件了！
+- **目的**：讓開發者可以藉由`npm install` 輕鬆安裝並管理函式庫，簡化了管理的時間。
+- 只要提供package.json，開發者就可以下載後執行`npm install`安裝所需的套件了！
+```
+package.json：執行 `npm init`後產生的檔案，就像是一個控制面板，裡面大致記錄著以下：專案名稱(name)、專案所使用的套件種類＆簡介（dependencies&description)、套件概述（keywords)、版本(version)、腳本(script)、license（套件使用證照）
+```
 
-### npm(Node Version Manager)
-- *目的*：隨著時間推進，Node.js的版本也會變舊，想要切換到不同版本的Node.js，就需要經過NVM切換版本。
+### nvm(Node Version Manager)
+- **目的**：隨著時間推進，Node.js的版本也會變舊，想要切換到不同版本的Node.js，就需要經過 nvm 切換版本。
 
 ``` 
 #列出已經安裝的所有版本
 nvm ls
+
 #安裝特定版本
 nvm install v20.17.0
+
 #切換成特定版本
 nvm install v20.17.0
+
 #設定預先版本
 nvm alias default v20.17.0
 ```
