@@ -15,9 +15,24 @@
 */
 
 //ary; number array
+
 function sum(ary){
     const initialValue=0;
     return ary.reduce((accumulator,currentValue)=> accumulator + currentValue, initialValue);
 }
 
 console.log(sum([1,5,3,2]));//11
+
+/*如果input的數字有n個，欲 1 + 2 + 3 + … + n 的話，
+用Array.from()方法-length屬性改寫：
+Array.from({ length: 5}, (num, i) => i)
+=>[0,1,2,3,4]*/
+
+function sum(n) {
+    const initialValue = 0;
+    return Array.from({ length: n }, (_, i) => i + 1)  // 產生從 1 到 n 的數字陣列
+                .reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+}
+
+console.log(sum(5));  // 1 + 2 + 3 + 4 + 5 = 15
+console.log(sum(10)); // 1 + 2 + ... + 10 = 55
