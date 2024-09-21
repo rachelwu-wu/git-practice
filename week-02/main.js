@@ -1,5 +1,5 @@
 //測試 Stack 
-import Stack from 'week-02/stack.js';
+import Stack from './stack.js';
 
 let myStack = new Stack(5);
 
