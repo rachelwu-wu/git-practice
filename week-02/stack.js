@@ -38,7 +38,7 @@ peek(){
     if(this.isStackEmpty()){
        return null; //當堆疊空時，返回null
     }
-    this.elements.[this.elements.length-1]; //返回頂端資料
+    this.elements[this.elements.length-1]; //返回頂端資料
 }
 
 //size()：返回當前stack大小
