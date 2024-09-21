@@ -3,7 +3,7 @@
 概念:會從左到右逐一縮減，最終計算為一個值
 */
 
-/*arr.reduce(callback[accumulator, currentValue, currentIndex, array], initialValue)
+/*ary.reduce(callback[accumulator, currentValue, currentIndex, array], initialValue)
 1. accumulator：保存每次運算後的結果
 2. currentValue：原陣列目前所處理中元素的值
 （若有提供 initialValue，則 accumulator 將會等於 initialValue，且 currentValue 會等於陣列中的第一個元素值）
@@ -16,12 +16,12 @@
 
 //ary; number array
 
-function sum(ary){
+function sumArray(ary){
     const initialValue=0;
     return ary.reduce((accumulator,currentValue)=> accumulator + currentValue, initialValue);
 }
 
-console.log(sum([1,5,3,2]));//11
+console.log(sumArray([1,5,3,2]));//11
 
 /*如果input的數字有n個，欲 1 + 2 + 3 + … + n 的話，
 用Array.from()方法-length屬性改寫：
