@@ -17,7 +17,7 @@
 //ary; number array
 function sum(ary){
     const initialValue=0;
-    return ary.reduce((accumulator,currentValue)=> accumulator + currenValue, initialValue);
+    return ary.reduce((accumulator,currentValue)=> accumulator + currentValue, initialValue);
 }
 
 console.log(sum([1,5,3,2]));//11
