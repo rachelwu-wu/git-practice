@@ -1,11 +1,11 @@
 //建構一個 Stack 類別
-class Stack{
+export default class Stack{
     constructor(maxSize){
         this.elements=[];   // 使用陣列儲存stack的元素
         this.maxSize = maxSize;     // 最大堆疊容量 
 
     }
-}
+
 
 //檢查stack是否為空
 isStackEmpty(){
@@ -44,5 +44,17 @@ peek(){
 //size()：返回當前stack大小
 size(){
     return this.elements.length;    //使用陣列提供的 length 表示陣列長度
+}
+
+// 清空 stack
+clear(){
+    this.elements = [];    //       直接清除陣列
+}
+
+//印出stack 內容
+print(){
+    console.log(this.elements.join(', ')); //將陣列＋逗號印出來
+}
+
 }
 
