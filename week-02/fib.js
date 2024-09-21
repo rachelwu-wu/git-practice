@@ -3,7 +3,7 @@ function fib(n){
     if (n<=1)
         return n;   //case:fib(0)=0, fib(1)=1
 
-    return fib(n)=fib(n-1)=fib(n-2); //下個數字總會是前兩個數字的和
+    return fib(n-1)=fib(n-2); //下個數字總會是前兩個數字的和
 }
 
 console.log(fib(0));  // 0
