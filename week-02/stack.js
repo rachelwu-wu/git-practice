@@ -20,7 +20,7 @@ isStackFull(){
 //push()：將元素放入stack
 push(element) {
     if(this.isStackFull()){
-        throw new Error("Stack is full!");  //當堆疊已滿時顯示插入錯誤
+        console.log("Error: Stack is full!");  // 堆疊已滿時插入僅顯示錯誤訊息，而不拋出錯誤（原本使用throw new error)
     }
     this.elements.push(element);
 }
@@ -28,7 +28,7 @@ push(element) {
 //pop()：從stack頂端取出資料並移除
 pop(){
     if(this.isStackEmpty()){
-        throw new Error("Stack is empty!"); //當堆疊空時顯示取出資料錯誤
+        console.log("Error: Stack is empty!"); //當堆疊空時顯示取出資料錯誤
     }
     this.elements.pop();
 }
