@@ -3,15 +3,17 @@
 ## package.json 中的 dependencies 與 devDependencies
 
 ```
-npm init 會建立一個 npm 的初始環境，npm 會自動替你生成空白的 package.json 這個檔案，裡面就有關於專案的設置：包含dependencies & devDependencies。
+npm init 會建立一個 npm 的初始環境，npm 會自動替你生成空白的 package.json 這個檔案，
+裡面就有關於專案的設置：包含dependencies & devDependencies。git
 ```
 
 - dependencies：部署後仍然需要依賴使用的 plug-in套件。
-  ex.`npm install express`就用來構建 Web 應用和 API
+  - ex.`npm install express`就用來構建 Web 應用和 API
 - devDependencies：只有單純在當下開發或測試環境需要的套件，應用部署後不需要。
-  ex.`npm install prettier --save-dev`用以自動調整代碼的格式。
+  - ex.`npm install prettier --save-dev`用以自動調整代碼的格式。
 
 **補充：**
+
 `npm install packagename –save`： 寫入至dependencies 與 devDependencies 下
 
 `npm install packagename –save-dev`：只有寫入devDependencies 下。
