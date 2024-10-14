@@ -33,6 +33,22 @@ proxy 指的是代理伺服器，充當客戶端和後端伺服器之間的中�
 
 ## 在 README 中提供步驟 9 的 Nginx 設定檔
 
+```
+server {
+    listen 80;
+    server_name YOUR_PUBLIC_IP;  # 替换为你的 EC2 公共 IP
+
+    location / {
+        proxy_pass http://localhost:3000;  # 替换为你的 Express 服务器运行的端口
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
 ## Security Group 是什麼？用途為何？有什麼設定原則嗎？
 
 Security Group 是 AWS 中的一種虛擬防火牆，用於控制進出 EC2 instances 的流量。其主要用途包括：
@@ -48,7 +64,12 @@ Security Group 是 AWS 中的一種虛擬防火牆，用於控制進出 EC2 inst
 `sudo` 是一個 Linux 命令，用於以 root 身份執行命令。某些操作（如安裝軟體或修改系統配置）需要更高權限，
 因此需要使用 `sudo`。但如查看文件或執行不需要特權的命令，就不需要加上 `sudo`。終端也會提醒你該指令是屬於特權命令還是普通操作。
 
-## Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？
+## Nginx 的 Log :
+
+Nginx 有分成錯誤日誌及訪問日誌：
+
+- **訪問日誌（access_log）**： 會放在/var/log/nginx/access.log，可以透過 sudo cat 查看 client request 。
+- **錯誤日誌（error_log）**：默認放在/var/log/nginx/error.log，一樣可以透過 sudo cat 查看在Nginx上的操作。
 
 ## 其他你在過程中遭遇的問題，有找到解答就記錄下來，沒有可以把問題放著，下次上課討論
 
@@ -56,3 +77,9 @@ Security Group 是 AWS 中的一種虛擬防火牆，用於控制進出 EC2 inst
 - 解決：再跑一次 `npm install` 跟 `express update`
 - 思考：突然覺得 `npm install` 真的很常被拿來解決問題，但某種程度上可能修復了與 dependencies 相關的版本不兼容、損壞的依賴或 bug，
   不過不知道如果真的沒有明顯的bug時就更新套件是否是正確的觀念。
+
+## 列出完成本作業時參考的資料
+
+[**What is Nginx: Everything You Need to Know - Papertrail**](https://www.papertrail.com/solution/guides/nginx/)
+
+[**[基礎觀念系列] Web Server & Nginx — (2) | by 莫力全Kyle Mo**](https://medium.com/starbugs/web-server-nginx-2-bc41c6268646)
