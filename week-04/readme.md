@@ -36,10 +36,10 @@ proxy 指的是代理伺服器，充當客戶端和後端伺服器之間的中�
 ```
 server {
     listen 80;
-    server_name YOUR_PUBLIC_IP;  # 替换为你的 EC2 公共 IP
+    server_name YOUR_PUBLIC_IP;
 
     location / {
-        proxy_pass http://localhost:3000;  # 替换为你的 Express 服务器运行的端口
+        proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
