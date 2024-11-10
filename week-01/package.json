@@ -1,0 +1,23 @@
+{
+  "name": "giractice",
+  "version": "1.0.0",
+  "description": "## **0912 Review Of 1st Lesson** 老師的教學風格頗嚴謹的，很注重學生的學習態度，身為碩士新生其實覺得這樣能讓每個同學隨 時上緊發條認真對待每一次的作業，也能在過程中紮實的學習到雲端部署與維運的實務操作！ 雖然我還尚等待加簽，但還是非常期待接下來或許很累但很有收穫的課程。",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "typescript": "5.5.x",
+    "typescript-eslint": "^8.7.0"
+  }
+}
