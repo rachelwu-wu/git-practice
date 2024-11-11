@@ -42,7 +42,7 @@
 
 - **問題**：檢查 iptables 規則後，發現防火牆阻擋了 TCP 80 埠的流量。
 - **解決方法**：使用 `sudo iptables -D INPUT -p tcp --dport 80 -j REJECT` 刪除阻擋規則，確認規則移除後，重新啟動 Nginx，但仍然無法正常運作。
-  ![檢查防火牆]（https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/%E6%AA%A2%E6%9F%A5iptables%E9%85%8D%E7%BD%AE.png）
+  ![查看防火牆配置規則](https://github.com/rachelwu-wu/git-practice/blob/6c0dd914a6b9faf9b552036ee5e9a54ccee8325f/%E6%AA%A2%E6%9F%A5iptables%E9%85%8D%E7%BD%AE.png)
   ![防火牆規則阻擋處理](https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/%E5%88%AA%E9%99%A4%E6%8B%92%E7%B5%95%E7%9A%84rule%E5%86%8D%E9%87%8D%E6%96%B0%E5%95%9F%E5%8B%95.png)
 
 ---
