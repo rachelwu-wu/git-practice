@@ -14,7 +14,7 @@
 
 ## 2. 檢查 Nginx 狀態
 
-- **問題**：執行 `sudo systemctl status nginx` 後，發現 Nginx 狀態為「inactive (dead)」，伺服器尚未真正啟動。執行 `sudo systemctl start nginx` 後仍無法連線，需進一步判斷是配置錯誤、埠錯誤還是權限問題。
+- **問題**：執行 `sudo systemctl status nginx` 後，發現 Nginx 狀態為「inactive (dead)」，伺服器尚未真正啟動。執行 `sudo systemctl start nginx` 後仍無法連線，需進一步判斷是配置錯誤、port相關錯誤還是權限問題。
 - **解決方法**：從配置文件著手，檢查 `nginx.conf` 是否存在格式或設定上的問題。
   ![Nginx狀態](https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/systemctl%20status%20nginx.png)
   ![Nginx start](https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/systemctl%20start%20nginx%20.png)
@@ -32,7 +32,7 @@
 ## 4. 80 埠被佔用
 
 - **問題**：檢查 Nginx 狀態時，發現 80 埠已被其他進程佔用，導致 Nginx 無法啟動。（錯誤訊息：`nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)`）
-- **解決方法**：使用指令找到佔用 80 埠的進程 ID，並執行 `sudo kill <PID>` 來終止該進程。重新啟動後仍出現錯誤。此時，經過同事提醒，考慮防火牆可能造成影響。
+- **解決方法**：找到佔用80 port 的活動 ID，並下指令殺掉該活動，重新啟動仍錯，這時候大概已經槁木死灰（開玩笑），幸好聊天室有人提到防火牆配置問題，於是…
   ![Nginx status](<https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/80%20failed%20(already%20in%20use).png>)
   ![kill PID](https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/%E6%8A%8A%E5%9C%A8%E7%9B%A3%E8%81%BD%E7%9A%84%E9%80%B2%E7%A8%8Bkill%E6%8E%89.png)
 
@@ -42,7 +42,7 @@
 
 - **問題**：檢查 iptables 規則後，發現防火牆阻擋了 TCP 80 埠的流量。
 - **解決方法**：使用 `sudo iptables -D INPUT -p tcp --dport 80 -j REJECT` 刪除阻擋規則，確認規則移除後，重新啟動 Nginx，但仍然無法正常運作。
-  ![檢查防火牆](https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/%E6%AA%A2%E6%9F%A5iptables%E9%85%8D%E7%BD%AE.png）
+  ![檢查防火牆]（https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/%E6%AA%A2%E6%9F%A5iptables%E9%85%8D%E7%BD%AE.png）
   ![防火牆規則阻擋處理](https://github.com/rachelwu-wu/git-practice/blob/13d45c07c2e787e13e1eabe7df9dd789f01344bb/%E5%88%AA%E9%99%A4%E6%8B%92%E7%B5%95%E7%9A%84rule%E5%86%8D%E9%87%8D%E6%96%B0%E5%95%9F%E5%8B%95.png)
 
 ---
